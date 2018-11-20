@@ -1,7 +1,5 @@
 var express = require('express');
-
 const PORT = 3000
-
 var flash = require('connect-flash');
 
 var passport = require("passport");
@@ -35,3 +33,4 @@ app.set('view options', { layout: false });
 require('./lib/routes.js')(app);
 
 app.listen(PORT);
+console.log("App running on: " + PORT);
