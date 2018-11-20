@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+	{{> import}}
+	{{> body_style}}
+</head>
+
+<body>
+	{{> header}}
+	<div id="content-wrapper" class="mui--text-center" style="height: 100%">
+		<div class="mui--appbar-height"></div>
+		<br><br><br>
+		<div class="mui-col-md-5 mui--align-middle">&nbsp</div>
+		<div class="mui-col-md-2 mui-panel">
+			<div class="mui-col-md-2">&nbsp</div>
+			<form method="POST" action="/login" class="mui-form mui-col-md-8 highlight">
+
+				<div class="mui-textfield">
+					<input type="text" placeholder="Username" name="username" required autofocus>
+				</div>
+				<br>
+				<div class="mui-textfield">
+					<input type="password" placeholder="Password" name="password" required>
+				</div>
+				<button type="submit" id="submit" name="submit" class="mui-btn mui-btn--raised">Submit</button>
+			</form>
+			<div class="mui-col-md-2">&nbsp</div>
+		</div>
+		<div class="mui-col-md-4">&nbsp</div>
+	</div>
+	{{> footer}}
+</body>
+
+</html>

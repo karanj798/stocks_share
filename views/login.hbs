@@ -1,35 +1,63 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head>
-	{{> import}}
-	{{> body_style}}
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
-	{{> header}}
-	<div id="content-wrapper" class="mui--text-center" style="height: 100%">
-		<div class="mui--appbar-height"></div>
-		<br><br><br>
-		<div class="mui-col-md-5 mui--align-middle">&nbsp</div>
-		<div class="mui-col-md-2 mui-panel">
-			<div class="mui-col-md-2">&nbsp</div>
-			<form method="POST" action="/login" class="mui-form mui-col-md-8 highlight">
+    <title>Login</title>
 
-				<div class="mui-textfield">
-					<input type="text" placeholder="Username" name="username" required autofocus>
-				</div>
-				<br>
-				<div class="mui-textfield">
-					<input type="password" placeholder="Password" name="password" required>
-				</div>
-				<button type="submit" id="submit" name="submit" class="mui-btn mui-btn--raised">Submit</button>
-			</form>
-			<div class="mui-col-md-2">&nbsp</div>
-		</div>
-		<div class="mui-col-md-4">&nbsp</div>
-	</div>
-	{{> footer}}
-</body>
+    <!-- Bootstrap core CSS-->
+    <link href="/public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="/public/css/sb-admin.css" rel="stylesheet">
+
+  </head>
+
+  <body class="bg-dark">
+
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form method="POST" action="/login">
+            <div class="form-group">
+              <div class="form-label-group">
+                <!--<input type="text" id="usrName" class="form-control" placeholder="User name" required="required" autofocus="autofocus" name="usrName">-->
+                <input type="text" id="username" name="username" class="form-control" placeholder="User name" required>
+                <label for="username">User Name</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-group">
+                <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" name="password">-->
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                <label for="password">Password</label>
+              </div>            
+          	</div>            
+            <!--<button class="btn btn-primary btn-block" type="submit" value="submit">Login</button>-->
+            <button type="submit" id="submit" name="submit" class="btn btn-primary btn-block">Log in</button>
+          </form>
+          <div class="text-center">
+            <a class="d-block small mt-3" href="/signup">Register an Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Bootstrap Stuff -->
+    <script src="/public/vendor/jquery/jquery.min.js"></script>
+    <script src="/public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  </body>
 
 </html>

@@ -28,6 +28,7 @@ app.set('view options', { layout: false });
 
 require('./lib/routes.js')(app);
 
+app.use('/public', express.static('public'));
 
 app.listen(PORT, 'localhost', (err) => {
     if (err) {

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+	{{> import}}
+	{{> body_style}}
+</head>
+
+<body>
+	{{> header}}
+	<div id="content-wrapper" class="mui--text-center" style="height: 100%">
+		<div class="mui--appbar-height"></div>
+		<br><br><br>
+		<div class="mui-col-md-5 mui--align-middle">&nbsp</div>
+		<div class="mui-col-md-2 mui-panel">
+			<div class="mui-col-md-2">&nbsp</div>
+			<h1>{{usrname}}</h1>
+			<form action="/logout" method="GET">
+				<button>Logout</button>
+			</form>
+			<div class="mui-col-md-2">&nbsp</div>
+		</div>
+		<div class="mui-col-md-4">&nbsp</div>
+	</div>
+	{{> footer}}
+</body>
+
+</html>
