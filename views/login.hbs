@@ -1,17 +1,35 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Stock Share</title>
 
+<head>
+	{{> import}}
+	{{> body_style}}
 </head>
+
 <body>
-<form method="POST" action="/login">
-<input type="text" id="username" name="username">
-<input type="password" id="password" name="password">
-<input type="submit" id="submit" name="submit">
-</form>
+	{{> header}}
+	<div id="content-wrapper" class="mui--text-center" style="height: 100%">
+		<div class="mui--appbar-height"></div>
+		<br><br><br>
+		<div class="mui-col-md-5 mui--align-middle">&nbsp</div>
+		<div class="mui-col-md-2 mui-panel">
+			<div class="mui-col-md-2">&nbsp</div>
+			<form method="POST" action="/login" class="mui-form mui-col-md-8 highlight">
+
+				<div class="mui-textfield">
+					<input type="text" placeholder="Username" name="username" required autofocus>
+				</div>
+				<br>
+				<div class="mui-textfield">
+					<input type="password" placeholder="Password" name="password" required>
+				</div>
+				<button type="submit" id="submit" name="submit" class="mui-btn mui-btn--raised">Submit</button>
+			</form>
+			<div class="mui-col-md-2">&nbsp</div>
+		</div>
+		<div class="mui-col-md-4">&nbsp</div>
+	</div>
+	{{> footer}}
 </body>
+
 </html>

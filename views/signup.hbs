@@ -1,153 +1,50 @@
 <!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Stock Share</title>
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
-	<style>
-		 /**
- * Body CSS
- */
- html,
- body {
-	font-family: 'Roboto', sans-serif !important;
-	height: 100%;
-}
-
-html,
-body,
-input,
-textarea,
-button {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-}
-
-
-/**
- * Header CSS
- */
- header {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 2;
-}
-
-header ul.mui-list--inline {
-	margin-bottom: 0;
-}
-
-header a {
-	color: white;
-}
-
-header table {
-	width: 100%;
-}
-
-
-/**
- * Content CSS
- */
- #content-wrapper {
-	min-height: 100%;
-
-	/* sticky footer */
-	box-sizing: border-box;
-	margin-bottom: -100px;
-	padding-bottom: 100px;
-}
-
-
-/**
- * Footer CSS
- */
- footer {
-	box-sizing: border-box;
-	height: 100px;
-	background-color: #eee;
-	border-top: 1px solid #e0e0e0;
-	padding-top: 35px;
-}
-
-::-webkit-input-placeholder {
- text-align: center;
-}
-
-:-moz-placeholder { /* Firefox 18- */
- text-align: center;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
- text-align: center;
-}
-</style>
+	{{> import}}
+	{{> body_style}}
 </head>
+
 <body>
- <header class="mui-appbar mui--z1">
-	<div class="mui-container">
-		<table>
-			<tr class="mui--appbar-height">
-				<td class="mui--text-title">Stock Share</td>
-				<td class="mui--text-right">
-					<ul class="mui-list--inline mui--text-body2">
-						<li><a href="/">Home</a></li>
-						<li><a href="/login">Login</a></li>
-						<li><a href="/signup">Sign up</a></li>
-					</ul>
-				</td>
-			</tr>
-		</table>
+	{{> header}}
+	<div id="content-wrapper" class="mui--text-center" style="height: 100%">
+		<div class="mui--appbar-height"></div>
+		<br><br><br>
+		<div class="mui-col-md-5 mui--align-middle">&nbsp</div>
+		<div class="mui-col-md-2 mui-panel">
+			<div class="mui-col-md-2">&nbsp</div>
+			<form class="mui-form mui-col-md-8 highlight">
+				<div class="mui-textfield">
+					<input type="text" placeholder="Full Name">
+				</div>
+				<br><br>
+				<div class="mui-textfield">
+					<input type="number" placeholder="Age">
+				</div>
+				<br><br>
+				<div class="mui-textfield">
+					<input type="Phone" placeholder="Phone Number">
+				</div>
+				<br><br>
+				<div class="mui-textfield">
+					<input type="text" placeholder="Address">
+				</div>
+				<br><br>
+				<div class="mui-textfield">
+					<input type="text" placeholder="Username">
+				</div>
+				<br><br>
+				<div class="mui-textfield">
+					<input type="password" placeholder="Password">
+				</div>
+				<button type="submit" class="mui-btn mui-btn--raised">Submit</button>
+			</form>
+			<div class="mui-col-md-2">&nbsp</div>
+		</div>
+		<div class="mui-col-md-4">&nbsp</div>
 	</div>
-</header>
-<div id="content-wrapper" class="mui--text-center" style="height: 100%">
-	<div class="mui--appbar-height"></div>
-	<br><br><br>
-	<div class="mui-col-md-5 mui--align-middle">&nbsp</div>
-	<div class="mui-col-md-2 mui-panel">
-		<div class="mui-col-md-2">&nbsp</div>
-		<form class="mui-form mui-col-md-8 highlight">
-            <div class="mui-textfield">
-				<input type="text" placeholder="Full Name">
-			</div>
-            <br><br>
-            <div class="mui-textfield">
-				<input type="number" placeholder="Age">
-			</div>
-            <br><br>
-            <div class="mui-textfield">
-				<input type="Phone" placeholder="Phone Number">
-			</div>
-            <br><br>
-            <div class="mui-textfield">
-				<input type="text" placeholder="Address">
-			</div>
-            <br><br>
-			<div class="mui-textfield">
-				<input type="text" placeholder="Username">
-			</div>
-			<br><br>
-			<div class="mui-textfield">
-				<input type="password" placeholder="Password">
-			</div>
-			<button type="submit" class="mui-btn mui-btn--raised">Submit</button>
-		</form>
-		<div class="mui-col-md-2">&nbsp</div>
-	</div>
-	<div class="mui-col-md-4">&nbsp</div>
-</div>
-<footer>
-	<div class="mui-container mui--text-center" style="font-size: 16px;">
-		Made with ❤️ by <b>ONTechU</b> Students 😂😂
-	</div>
-</footer>
+	{{> footer}}
 </body>
+
 </html>
