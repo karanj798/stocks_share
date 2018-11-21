@@ -30,12 +30,6 @@ require('./lib/routes.js')(app);
 
 app.use('/public', express.static('public'));
 
-/*app.listen(process.env.PORT || PORT, 'localhost', (err) => {
-    if (err) {
-        console.log(err);
-    }
-    console.info('>>> 🌎 Open http://localhost:%s/ in your browser.', PORT);
-});*/
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(process.env.PORT || 3000, function () {
+    console.info('>>> 🌎 Open http://localhost:%s/ in your browser.', this.address().port);
   });
