@@ -30,6 +30,12 @@ require('./lib/routes.js')(app);
 
 app.use('/public', express.static('public'));
 
+app.use('/api/stocks/ANF/TIME_SERIES_DAILY', function (req, res, next) {
+    console.log('Request Type:', req.method);
+    next();
+})
+
 app.listen(process.env.PORT || 3000, function () {
     console.info('>>> 🌎 Open http://localhost:%s/ in your browser.', this.address().port);
   });
+
