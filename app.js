@@ -11,9 +11,8 @@ const expressSession = require('express-session');
 const PORT = process.env.PORT || 3000
 
 
-
 app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('body-parser').urlencoded({extended: true}));
 app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -22,9 +21,16 @@ app.use(flash());
 app.use(session({secret: 'keyboard cat'}))
 app.use(bodyParser());
 
-hbs.registerPartials(__dirname + '/views/partials');
+//hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper("if_eq", function (a, b, opts) {
+    if (a == b) {
+        return opts.fn(this);
+    } else {
+        return opts.inverse(this);
+    }
+});
 app.set('view engine', 'hbs');
-app.set('view options', { layout: false });
+app.set('view options', {layout: false});
 
 require('./lib/routes.js')(app);
 
@@ -37,5 +43,5 @@ app.use('/api/stocks/ANF/TIME_SERIES_DAILY', function (req, res, next) {
 
 app.listen(process.env.PORT || 3000, function () {
     console.info('>>> 🌎 Open http://localhost:%s/ in your browser.', this.address().port);
-  });
+});
 
