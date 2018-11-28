@@ -82,7 +82,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="/stats">
                     <i class="far fa-chart-bar"></i>
-                    <span>Market Stats</span></a>
+                    <span>Market Stats</span>
+                </a>
             </li>
             <li class="nav-item dropdown show">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
@@ -109,7 +110,7 @@
                     <li class="breadcrumb-item">
                         <a href="/">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Market Stats</li>
+                    <li class="breadcrumb-item active">Transactions</li>
                 </ol>
 
                 <!-- DataTables Example -->
@@ -119,106 +120,25 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Company Name</th>
-                                        <th>Average Buying Price</th>
-                                        <th>Average Selling Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each data}}
-                                    <tr>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.avbought}}</td>
-                                        <td>{{this.avsold}}</td>
-                                    </tr>
-                                    {{/each}}
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Company Name</th>
-                                        <th>Average Buying Price</th>
-                                        <th>Average Selling Price</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <div>&nbsp;<br></div>
+
                             <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>Stockholder Name</th>
-                                        <th>Company Name</th>
-                                        <th>Amount For Sale</th>
-                                        <th>Amount Sold</th>
+                                        <th>Stocks Owned</th>
+                                        <th>Balance</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    {{#each data3}}
-                                    <tr>
-                                        <td>{{this.stkh_name}}</td>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.fsale}}</td>
-                                        <td>{{this.sold}}</td>
-                                    </tr>
-                                    {{/each}}
-                                </tbody>
+
                                 <tfoot>
                                     <tr>
                                         <th>Stockholder Name</th>
-                                        <th>Company Name</th>
-                                        <th>Amount For Sale</th>
-                                        <th>Amount Sold</th>
+                                        <th>Stocks Owned</th>
+                                        <th>Balance</th>
                                     </tr>
                                 </tfoot>
                             </table>
-                            <div>&nbsp;</div>
-                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Company Name</th>
-                                        <th>Times Sold</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each data4}}
-                                    <tr>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.count}}</td>
-                                    </tr>
-                                    {{/each}}
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Company Name</th>
-                                        <th>Times Sold</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <div>&nbsp;</div>
-                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Company Name</th>
-                                        <th>Times Bought</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each data5}}
-                                    <tr>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.count}}</td>
-                                    </tr>
-                                    {{/each}}
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Company Name</th>
-                                        <th>Times Bought</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
+
                         </div>
                     </div>
                     <div class="card-footer small text-muted">Updated at {{currentTime}}</div>
@@ -231,7 +151,7 @@
             <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Made with ❤️ by ONTechU students 😂😂</span>
+                        <span>Made with ❤️ by ONTechU Students 😂😂</span>
                     </div>
                 </div>
             </footer>

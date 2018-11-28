@@ -29,93 +29,109 @@
 
 <body id="page-top">
 
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="/">Stock Share</a>
+        <a class="navbar-brand mr-1" href="/">Stock Share</a>
 
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-        <i class="fas fa-bars"></i>
-    </button>
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
-                   aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-
-    <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle active" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">{{usrname}}
-                <i class="fas fa-user-circle fa-fw"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="/transactions">{{usrname}}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Settings</a>
-                <a class="dropdown-item" href="/userhistory">User Activity Log</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-            </div>
-        </li>
-    </ul>
-</nav>
-
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="/">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/tables">
-                <i class="far fa-chart-bar"></i>
-                <span>Market Stats</span></a>
-        </li>
-    </ul>
-
-    <div id="content-wrapper">
-        <div class="container-fluid">
-            <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">Transactions</li>
-            </ol>
-
-            <!-- DataTables Example -->
-            <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-table"></i>
+        <!-- Navbar Search -->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
+            </div>
+        </form>
 
-                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {{#each data}}
-                                {{#if_eq this.trsc_type "buy"}}
+        <!-- Navbar -->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle active" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">{{usrname}}
+                    <i class="fas fa-user-circle fa-fw"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="/transactions">{{usrname}}</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/settings">Settings</a>
+                    <a class="dropdown-item" href="/userhistory">User Activity Log</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/stats">
+                    <i class="far fa-chart-bar"></i>
+                    <span>Market Stats</span></a>
+            </li>
+            <li class="nav-item dropdown show">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Companies</span>
+                </a>
+                <div class="dropdown-menu show" aria-labelledby="pagesDropdown" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(5px, 56px, 0px);">
+
+                    <a class="dropdown-item" href="/company/241">Abercrombie & Fitch Co.</a>
+                    <a class="dropdown-item" href="/company/11341">Air Canada</a>
+                    <a class="dropdown-item" href="/company/888">Apple</a>
+                    <a class="dropdown-item" href="/company/989">Google</a>
+                    <a class="dropdown-item" href="/company/546745">Microsoft Corporation</a>
+                    <a class="dropdown-item" href="/company/3463">Tesla</a>
+                </div>
+            </li>
+        </ul>
+
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active">Transactions</li>
+                </ol>
+
+                <!-- DataTables Example -->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Company Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each data}}
+                                    {{#if_eq this.trsc_type "buy"}}
                                     <tr>
                                         <h1>Buying Transactions</h1>
                                         <td>{{this.trsc_date}}</td>
@@ -123,30 +139,30 @@
                                         <td>{{this.quantity}}</td>
                                         <td>{{this.total_price}}</td>
                                     </tr>
-                                {{/if_eq}}
-                            {{/each}}
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {{#each data}}
-                                {{#if_eq this.trsc_type "sell"}}
+                                    {{/if_eq}}
+                                    {{/each}}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Company Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Company Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each data}}
+                                    {{#if_eq this.trsc_type "sell"}}
                                     <tr>
                                         <br>
                                         <h1>Selling Transactions</h1>
@@ -155,65 +171,65 @@
                                         <td>{{this.quantity}}</td>
                                         <td>{{this.total_price}}</td>
                                     </tr>
-                                {{/if_eq}}
-                            {{/each}}
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                            </tfoot>
-                        </table>
+                                    {{/if_eq}}
+                                    {{/each}}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Company Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated at {{currentTime}}</div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Made with ❤️ by ONTechU Students 😂😂</span>
                     </div>
                 </div>
-                <div class="card-footer small text-muted">Updated at {{currentTime}}</div>
-            </div>
+            </footer>
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.content-wrapper -->
 
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Made with ❤️ by ONTechU Students 😂😂</span>
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
                 </div>
             </div>
-        </footer>
-
-    </div>
-    <!-- /.content-wrapper -->
-
-</div>
-<!-- /#wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="/logout">Logout</a>
-            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
