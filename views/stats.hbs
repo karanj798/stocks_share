@@ -219,6 +219,35 @@
                                     </tr>
                                 </tfoot>
                             </table>
+                            <div>&nbsp;</div>
+                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <th>Stock Name</th>
+                                        <th>Stock Price</th>
+                                        <th>Currency Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each data6}}
+                                    <tr>
+                                        <td>{{this.comp_name}}</td>
+                                        <td>{{this.comp_ticker}}</td>
+                                        <td>{{this.stk_price}}</td>
+                                        <td>{{this.ctype}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <th>Stock Name</th>
+                                        <th>Stock Price</th>
+                                        <th>Currency Type</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                     <div class="card-footer small text-muted">Updated at {{currentTime}}</div>
