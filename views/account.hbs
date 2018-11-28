@@ -146,6 +146,7 @@
                                                 onclick="func(this.id)">Buy</button>
                                         </td>
                                     </tr>
+                                    
                                     {{/each}}
                                 </tbody>
                                 <tfoot>
@@ -160,6 +161,7 @@
                             </table>
                         </div>
                     </div>
+                    
                     <div class="card-footer small text-muted">Updated at {{currentTime}}</div>
                 </div>
 
@@ -213,7 +215,7 @@
                                         option.text = 5;
                                         dropDown.add(option);
 
-                                        console.log(dropDown);*/ leave it ... // click on sell u should see 4 if this gets too hectic just allow to put any number its okay.
+                                        console.log(dropDown);*/ // click on sell u should see 4 if this gets too hectic just allow to put any number its okay.
                                     </script>
                                 </select>
                             </div>
@@ -235,55 +237,38 @@
     </div>
 
     <!-- Buy Modal-->
+    
     <div class="modal" id="buy-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Buy: How many Quantity of Stock?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="card-body">
-                        <form method="POST" action="/?"> {{!-- TODO: IDK WHERE TO DIRECT TO --}}
-
-                            <div class="form-group">
-                                <select id="quantity-dropdown" class="custom-select">
-
-                                    <script type="text/javascript">
-                                        let modalObj;
-                                        function func(id) {
-                                            modalObj = document.getElementById(id);
-                                            alert(modalObj);
-                                        }
-                                        let dropDown = document.getElementById('quantity-dropdown');
-                                        var option = document.createElement("option");
-
-                                        option.text = 5;
-                                        dropDown.add(option);
-                                        option.text = 5;
-                                        dropDown.add(option);
-                                        for (var i = 1; i <= modalObj; i++) {
-                                            option = document.createElement("option");
-                                            option.text = i;
-                                            dropDown.add(option);
-                                        }
-                                        console.log(modalObj);
-                                    </script>
-
-
-                                </select>
-                            </div>
+                <form method="GET" action="/buystock">
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <h5 class="modal-body" id="purchaseLabel">Are you sure?</h5>
                             <div class="text-center">
-                                <button type="submit" id="buy-stock" name="buy-stock" class="btn btn-primary btn-block">Buy</button>
+                                <button type="submit" id="buybtn" name="buybtn" class="btn btn-primary btn-block">Buy</button>
                             </div>
-                        </form>
+                            <script type="text/javascript">
+                                let modalObj;
+                                function func(id) {
+                                    modalObj = document.getElementById(id);
+                                    let button = document.getElementById('buybtn');
+                                    button.setAttribute("id", id.toString());
+                                    button.setAttribute("name", id.toString());
+                                }
+                                
+                               
+                            </script>
+
+                           
+                            
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+   
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
