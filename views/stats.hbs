@@ -24,6 +24,7 @@
     <script src="/public/vendor/datatables/dataTables.bootstrap4.js"></script>
     <script src="/public/js/sb-admin.min.js"></script>
     <script src="/public/js/demo/datatables-demo.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -72,7 +73,7 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item {{dashBoardActive}}">
+        <li class="nav-item">
             <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
@@ -92,46 +93,68 @@
                 <li class="breadcrumb-item">
                     <a href="/">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Tables</li>
+                <li class="breadcrumb-item active">Market Stats</li>
             </ol>
 
-            <!-- DataTables -->
+            <!-- DataTables Example -->
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Stock Name</th>
                                 <th>Company Name</th>
-                                <th>Seller Name</th>
-                                <th>Quantity</th>
-                                <th>Buy</th>
+                                <th>Average Buying Price</th>
+                                <th>Average Selling Price</th>
                             </tr>
                             </thead>
                             <tbody>
                             {{#each data}}
                                 <tr>
-                                    <td>{{this.comp_ticker}}</td>
                                     <td>{{this.comp_name}}</td>
-                                    <td>{{this.stkh_name}}</td>
-                                    <td>{{this.quantity}}</td>
-                                    <td>
-                                        <button class="btn btn-primary" id="{{this.selling_id}}">Buy</button>
-                                    </td>
+                                    <td>{{this.avbought}}</td>
+                                    <td>{{this.avsold}}</td>
                                 </tr>
                             {{/each}}
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Stock Name</th>
                                 <th>Company Name</th>
-                                <th>Seller Name</th>
-                                <th>Quantity</th>
-                                <th>Buy</th>
+                                <th>Average Buying Price</th>
+                                <th>Average Selling Price</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        <div>&nbsp;<br></div>
+                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Stockholder Name</th>
+                                <th>Company Name</th>
+                                <th>Amount For Sale</th>
+                                <th>Amount Sold</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each data3}}
+                                <tr>
+                                    <td>{{this.stkh_name}}</td>
+                                    <td>{{this.comp_name}}</td>
+                                    <td>{{this.fsale}}</td>
+                                    <td>{{this.sold}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Stockholder Name</th>
+                                <th>Company Name</th>
+                                <th>Amount For Sale</th>
+                                <th>Amount Sold</th>
                             </tr>
                             </tfoot>
                         </table>
