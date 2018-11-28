@@ -80,7 +80,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/tables">
+            <a class="nav-link" href="/stats">
                 <i class="far fa-chart-bar"></i>
                 <span>Market Stats</span></a>
         </li>
@@ -107,63 +107,37 @@
                         <table class="table table-bordered" id="" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
+                                <th>Stockholder Name</th>
+                                <th>Balance</th>
+                                <th>Transaction Type</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
+                                <th>Company Name</th>
+                                <th>Currency</th>
                             </tr>
                             </thead>
                             <tbody>
                             {{#each data}}
-                                {{#if_eq this.trsc_type "buy"}}
-                                    <tr>
-                                        <h1>Buying Transactions</h1>
-                                        <td>{{this.trsc_date}}</td>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.quantity}}</td>
-                                        <td>{{this.total_price}}</td>
-                                    </tr>
-                                {{/if_eq}}
+                                <tr>
+                                    <td>{{this.stkh_name}}</td>
+                                    <td>{{this.balance}}</td>
+                                    <td>{{this.trsc_type}}</td>
+                                    <td>{{this.quantity}}
+                                    <td>{{this.total_price}}</td>
+                                    <td>{{this.comp_name}}</td>
+                                    <td>{{this.ctype}}</td>
+                                </tr>
                             {{/each}}
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
+                                <th>Stockholder Name</th>
+                                <th>Balance</th>
+                                <th>Transaction Type</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>Date</th>
                                 <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {{#each data}}
-                                {{#if_eq this.trsc_type "sell"}}
-                                    <tr>
-                                        <br>
-                                        <h1>Selling Transactions</h1>
-                                        <td>{{this.trsc_date}}</td>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.quantity}}</td>
-                                        <td>{{this.total_price}}</td>
-                                    </tr>
-                                {{/if_eq}}
-                            {{/each}}
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Date</th>
-                                <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
+                                <th>Currency</th>
                             </tr>
                             </tfoot>
                         </table>
@@ -179,7 +153,7 @@
         <footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Made with ❤️ by ONTechU Students 😂😂</span>
+                    <span>Made with ❤️ by ONTechU students 😂😂</span>
                 </div>
             </div>
         </footer>

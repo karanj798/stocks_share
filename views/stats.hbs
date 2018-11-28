@@ -80,7 +80,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/tables">
+            <a class="nav-link" href="/stats">
                 <i class="far fa-chart-bar"></i>
                 <span>Market Stats</span></a>
         </li>
@@ -93,7 +93,7 @@
                 <li class="breadcrumb-item">
                     <a href="/">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Transactions</li>
+                <li class="breadcrumb-item active">Market Stats</li>
             </ol>
 
             <!-- DataTables Example -->
@@ -107,63 +107,54 @@
                         <table class="table table-bordered" id="" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Date</th>
                                 <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
+                                <th>Average Buying Price</th>
+                                <th>Average Selling Price</th>
                             </tr>
                             </thead>
                             <tbody>
                             {{#each data}}
-                                {{#if_eq this.trsc_type "buy"}}
-                                    <tr>
-                                        <h1>Buying Transactions</h1>
-                                        <td>{{this.trsc_date}}</td>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.quantity}}</td>
-                                        <td>{{this.total_price}}</td>
-                                    </tr>
-                                {{/if_eq}}
+                                <tr>
+                                    <td>{{this.comp_name}}</td>
+                                    <td>{{this.avbought}}</td>
+                                    <td>{{this.avsold}}</td>
+                                </tr>
                             {{/each}}
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Date</th>
                                 <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
+                                <th>Average Buying Price</th>
+                                <th>Average Selling Price</th>
                             </tr>
                             </tfoot>
                         </table>
+                        <div>&nbsp;<br></div>
                         <table class="table table-bordered" id="" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Date</th>
+                                <th>Stockholder Name</th>
                                 <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
+                                <th>Amount For Sale</th>
+                                <th>Amount Sold</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{#each data}}
-                                {{#if_eq this.trsc_type "sell"}}
-                                    <tr>
-                                        <br>
-                                        <h1>Selling Transactions</h1>
-                                        <td>{{this.trsc_date}}</td>
-                                        <td>{{this.comp_name}}</td>
-                                        <td>{{this.quantity}}</td>
-                                        <td>{{this.total_price}}</td>
-                                    </tr>
-                                {{/if_eq}}
+                            {{#each data3}}
+                                <tr>
+                                    <td>{{this.stkh_name}}</td>
+                                    <td>{{this.comp_name}}</td>
+                                    <td>{{this.fsale}}</td>
+                                    <td>{{this.sold}}</td>
+                                </tr>
                             {{/each}}
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Date</th>
+                                <th>Stockholder Name</th>
                                 <th>Company Name</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
+                                <th>Amount For Sale</th>
+                                <th>Amount Sold</th>
                             </tr>
                             </tfoot>
                         </table>
@@ -179,7 +170,7 @@
         <footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Made with ❤️ by ONTechU Students 😂😂</span>
+                    <span>Made with ❤️ by ONTechU students 😂😂</span>
                 </div>
             </div>
         </footer>
