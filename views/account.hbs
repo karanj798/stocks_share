@@ -146,7 +146,7 @@
                                                 onclick="func(this.id)">Buy</button>
                                         </td>
                                     </tr>
-                                    
+
                                     {{/each}}
                                 </tbody>
                                 <tfoot>
@@ -161,7 +161,7 @@
                             </table>
                         </div>
                     </div>
-                    
+
                     <div class="card-footer small text-muted">Updated at {{currentTime}}</div>
                 </div>
 
@@ -237,11 +237,11 @@
     </div>
 
     <!-- Buy Modal-->
-    
+
     <div class="modal" id="buy-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="GET" action="/buystock">
+                <form method="post" id="form" action="/buystocks">
                     <div class="modal-body">
                         <div class="card-body">
                             <h5 class="modal-body" id="purchaseLabel">Are you sure?</h5>
@@ -253,22 +253,19 @@
                                 function func(id) {
                                     modalObj = document.getElementById(id);
                                     let button = document.getElementById('buybtn');
-                                    button.setAttribute("id", id.toString());
-                                    button.setAttribute("name", id.toString());
+                                    //button.setAttribute("name", id.toString());
+                                    button.setAttribute("value", id.toString());
+                                    let form = document.getElementById('form');
+                                    form.setAttribute("action", "/buystocks/" + id);
                                 }
-                                
-                               
                             </script>
-
-                           
-                            
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-   
+
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
