@@ -61,7 +61,7 @@
                     <a class="dropdown-item" href="/transactions">{{usrname}}</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/settings">Settings</a>
-                    <a class="dropdown-item" href="/userhistory">User Activity Log</a>
+                    <a class="dropdown-item" href="/userhistory">Market Activity Log</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                 </div>
@@ -161,11 +161,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <br>
+                                    <h1>Selling Transactions</h1>
                                     {{#each data}}
                                     {{#if_eq this.trsc_type "sell"}}
                                     <tr>
-                                        <br>
-                                        <h1>Selling Transactions</h1>
                                         <td>{{this.trsc_date}}</td>
                                         <td>{{this.comp_name}}</td>
                                         <td>{{this.quantity}}</td>
