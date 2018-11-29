@@ -1,7 +1,7 @@
 {
   "name": "stocks_share",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Usage ``` $ git clone https://github.com/karanj798/stocks_share.git $ cd stocks_share $ npm install $ npm start ``` The app is live on `localhost:3000`.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
